@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #166c01; /* Небо */
+}
+
+.landscape {
+    position: relative;
+    height: 300px;
+}
+
+.sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border-radius: 50%;
+    top: 20px;
+    left: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+.tree {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: #8B4513; /* Цвет ствола */
+    bottom: 70px;
+    left: 50px;
+}
+
+.tree:before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: green; /* Цвет листвы */
+    border-radius: 50%;
+    top: -40px;
+    left: -20px;
+}
+
+.house {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    background: #FF6347; /* Цвет дома */
+    bottom: 70px;
+    left: 150px;
+    border: 2px solid #000; /* Контур дома */
+}
+
+.house:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 30px solid #A52A2A; /* Цвет крыши */
+    top: -30px;
+    left: 0;
+}
+
+.road {
+    
+    height: 200px;
+    background: #02c4ff; /* Дорога */
+    overflow: hidden;
+}
+
+.car {
+    position: absolute;
+    width: 200px; /* Ширина машины */
+    height: 100px;
+    bottom: 50px; /* Поднимаем машину над дорогой */
+    left: -200px; /* Начальная позиция за пределами экрана */
+    animation: drive 5s linear forwards;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+    background: #592222; /* Цвет машины */
+    border-radius: 20px 20px 0 0; /* Закругленные верхние углы */
+    position: relative;
+}
+
+.roof {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    background: #000000; /* Цвет крыши */
+    border-radius: 10px;
+    top: -10px; /* Положение крыши */
+    left: 40px; /* Положение крыши */
+}
+
+.window {
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.8); /* Цвет окон */
+    border-radius: 5px;
+}
+
+.front-window {
+    top: 8px;
+    left: 40px; /* Положение переднего окна */
+}
+
+.back-window {
+    top: 8px;
+    right: 40px; /* Положение заднего окна */
+}
+
+.headlight {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: rgb(229, 255, 0); /* Цвет фар */
+    border-radius: 5px;
+    top: 60px; /* Положение фар */
+}
+
+.left-headlight {
+    left: 0px; /* Положение левой фары */
+}
+
+.right-headlight {
+    right: 0px; /* Положение правой фары */
+}
+
+.wheel {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #333; /* Цвет колес */
+    border-radius: 50%;
+    bottom: -30px; /* Позиция колес */
+}
+
+.left-wheel {
+    left: 20px; /* Левое колесо */
+}
+
+
+.right-wheel {
+    right: 20px; /* Правое колесо */
+}
+
+.left-wheel {
+    right: 20px; /* Правое колесо */
+}
+
+@keyframes drive {
+    0% {
+        left: -200px; /* Начальная позиция */
+    }
+    80% {
+        left: calc(100% - 250px); /* Остановка за 50px до правого края */
+    }
+    100% {
+        left: calc(100% - 250px); /* Удерживаем позицию */
+    }
+}
+
+
+
